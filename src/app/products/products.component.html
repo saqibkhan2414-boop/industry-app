@@ -1,0 +1,15 @@
+<input
+  class="search-input"
+  type="text"
+  placeholder="Search products"
+  [(ngModel)]="searchTerm"
+/>
+
+<div class="products-container">
+  <div class="product-card" *ngFor="let product of filteredProducts()">
+    <h3>{{ product.name }}</h3>
+    <p>{{ product.description }}</p>
+    <p>{{ product.price | currency }}</p>
+    <a [routerLink]="['/products', product.id]">View Details</a>
+  </div>
+</div>
